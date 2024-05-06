@@ -100,6 +100,8 @@ SOCIAL_AUTH_GITHUB_KEY = '29018b7237249df6d9fe'
 SOCIAL_AUTH_GITHUB_SECRET = '15d8c8a8c424aa76b9fb145e5d5fa64b660fec9b'
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
+
 LOGIN_URL = '/auth/login/github-oauth2/'
 
 LOGIN_REDIRECT_URL = 'generator_page'
