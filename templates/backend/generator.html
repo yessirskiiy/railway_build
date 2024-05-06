@@ -49,7 +49,7 @@
 {% else %}
 <div class="d-flex justify-content-center align-items-center">
     {% csrf_token %}
-    <div class="go"> <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a></div>
+    <a class="btn btn-secondary" href="{% url  'social:begin' 'github' %}" role="button">Авторизоваться</a>
 </div>
 {% endif %}
 </body>
