@@ -33,24 +33,24 @@
 </head>
 <body>
 {% if request.user.is_authenticated %}
-<div class="justify-content-center">
-    <p>Случайное число:
-    <div id="random_number"></div>
-    </p>
-    Current user: {{user}}
+    <div class="justify-content-center">
+        <p>Случайное число:
+        <div id="random_number"></div>
+        </p>
+        Current user: {{ user }}
 
-    <div class="d-flex justify-content-center align-items-center">
-    <form method="post" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button class="btn btn-secondary" type="submit">Выйти</button>
-    </form>
-</div>
-</div>
+        <div class="d-flex justify-content-center align-items-center">
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button class="btn btn-secondary" type="submit">Выйти</button>
+            </form>
+        </div>
+    </div>
 {% else %}
-<div class="d-flex justify-content-center align-items-center">
-    {% csrf_token %}
-    <a class="btn btn-secondary" href="{% url  'social:begin' 'github' %}" role="button">Авторизоваться</a>
-</div>
+    <div class="d-flex justify-content-center align-items-center">
+        {% csrf_token %}
+        <a class="btn btn-secondary" href="{% url  'social:begin' 'github' %}" role="button">Авторизоваться</a>
+    </div>
 {% endif %}
 </body>
 </html>
