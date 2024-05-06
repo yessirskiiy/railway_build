@@ -40,11 +40,11 @@
     Current user: {{user}}
 
     <div class="d-flex justify-content-center align-items-center">
+    <form method="post" action="{% url 'logout' %}">
         {% csrf_token %}
-        <form method="post" action="{% url 'logout' %}">
-            <button class="btn btn-secondary" type="submit">Выйти</button>
-        </form>
-    </div>
+        <button class="btn btn-secondary" type="submit">Выйти</button>
+    </form>
+</div>
 </div>
 {% else %}
 <div class="d-flex justify-content-center align-items-center">
