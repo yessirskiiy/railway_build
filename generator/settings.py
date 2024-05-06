@@ -11,6 +11,8 @@ DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 SECRET_KEY = os.environ.get("SECRET_KEY")
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app', 'https://*.127.0.0.1']
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -99,8 +101,6 @@ SOCIAL_AUTH_URL_NAMESPACE = 'social'
 SOCIAL_AUTH_GITHUB_KEY = '29018b7237249df6d9fe'
 SOCIAL_AUTH_GITHUB_SECRET = '15d8c8a8c424aa76b9fb145e5d5fa64b660fec9b'
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
-
-CSRF_TRUSTED_ORIGINS = ['https://web-production-4d5cc.up.railway.app']
 
 LOGIN_URL = '/auth/login/github-oauth2/'
 
