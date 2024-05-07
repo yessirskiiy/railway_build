@@ -3,7 +3,7 @@ from celery import Celery
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'generator.settings')
 
-celery_app = Celery('generator', broker=os.environ.get('REDIS_URL'), backend=os.environ.get('REDIS_URL'))
+celery_app = Celery('generator', broker=os.environ.get('REDIS_URL2'), backend=os.environ.get('REDIS_URL2'))
 celery_app.config_from_object('django.conf:settings', namespace='CELERY')
 celery_app.autodiscover_tasks()
 
