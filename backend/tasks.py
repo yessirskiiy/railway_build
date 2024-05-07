@@ -8,7 +8,7 @@ channel_layer = get_channel_layer()
 
 @shared_task
 def get_number():
-    url = 'https://web-production-4d5cc.up.railway.app/api/random/'
+    url = 'https://web-production-1241.up.railway.app/api/random/'
     response = requests.get(url)
     number = response.json()['random_number']
 
