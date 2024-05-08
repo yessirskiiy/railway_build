@@ -1,1 +1,3 @@
-web: python manage.py migrate && daphne generator.asgi:application --port $PORT --bind 0.0.0.0 -v2 & celery -A generator worker -l INFO & celery -A generator beat
+release: python manage.py migrate &&
+web: daphne generator.asgi:application --port $PORT --bind 0.0.0.0 -v2
+worker: celery -A generator.celery worker & celery -A generator beat --pool=solo -l INFO & wait -n
